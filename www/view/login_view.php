@@ -12,11 +12,18 @@
     <img src="/assets/images/logo.png">
 </header>
 <body>
+<?php
+    foreach($err_msg as $err){ ?>
+    <ul>
+        <li><?php print $err; ?></li>
+    </ul>
+    <?php } ?>
 <div class="form">
 <p>ようこそ</p>
 <form method="POST">
 <label>お名前：<input type="text" name="user_name"></label>
 <label>パスワード：<input type="password" name="user_pass"></label>
+<label><input type="submit" value="ログイン"></label>
 <a href="regist.php">新規登録</a>
 </form>
 </div>
