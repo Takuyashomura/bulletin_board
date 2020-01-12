@@ -1,0 +1,10 @@
+header{
+    border-bottom: solid 1px;
+}
+.image{
+    width: 980px;
+    margin: 0 auto;
+}
+header>img{
+    margin: 0 auto;
+}

@@ -34,3 +34,7 @@ function get_post($name){
     }
     return '';
 }
+
+function is_logined(){
+    return get_session('name');
+}

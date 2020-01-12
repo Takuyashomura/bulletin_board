@@ -1,3 +1,30 @@
-p{
-    color:red;
+
+.center{
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px 30px 10px 10px;
+    margin-top: 50px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+.center>ul{
+    color: red;
+    list-style: none;
+}
+.form>div{
+    display:flex;
+    margin-top: 10px;
+}
+label{
+    font-size: 20px;
+    font-family: serif;
+}
+
+.submit{
+    width: 60px;
+    margin-left:auto;
+}
+.submit_button{
+    font-size: 80px;
+    padding: 0 30px;
 }

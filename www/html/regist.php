@@ -6,6 +6,7 @@ session_start();
 $result = '';
 $err_msg = array();
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
 if(get_post('user_name') === '' || get_post('user_name') < 0){
     $err_msg[] = 'ユーザー名を入力してください。';
 } elseif(mb_strlen(get_post('user_name')) > 10 ){
