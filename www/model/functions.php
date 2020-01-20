@@ -36,5 +36,8 @@ function get_post($name){
 }
 
 function is_logined(){
-    return get_session('name');
+    if(!isset($_SESSION['name']) === true){
+        header('Location: /login.php');
+        exit;
+    }
 }
