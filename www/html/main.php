@@ -4,10 +4,12 @@ require_once '../model/functions.php';
 require_once '../model/main_model.php';
 
 session_start();
-if($_SESSION['name'] === ''){
-
-    header('login.php');
+if(isset($_SESSION['room_id']) === true){
+    unset($_SESSION['room_id']);
 }
+
+is_logined();
+
 $room_data = array();
 
 $db = get_db_conect();

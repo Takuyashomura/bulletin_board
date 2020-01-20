@@ -33,7 +33,10 @@
          <td><?php print $room['room_id'];?></td>
          <td><?php print $room['room_name'];?></td>
          <td><?php print $room['administrator'];?></td>
-         <td><a href="">入室</a></td>
+         <td><form method="POST" action="room.php">
+             <input class="submit" type="submit" value="入室">
+             <input type="hidden" name="room_id" value=<?php print $room['room_id'];?>>
+         </form></td>
      </tr>   
    <?php } ?>
     </div>

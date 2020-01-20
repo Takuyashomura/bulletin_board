@@ -19,7 +19,6 @@ function fetch_query($db,$sql,$params = array()){
     try{
         $stmt = $db->prepare($sql);
         $stmt->execute($params);
-
         return $stmt->fetch();
     } catch(PDOException $e){
         $err_message[] = 'データ取得に失敗しました。';
