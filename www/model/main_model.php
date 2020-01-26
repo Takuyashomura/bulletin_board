@@ -36,7 +36,7 @@ function get_room($db){
 
 function insert_comment($db,$room_id,$user_name,$user_comment,$nowdate){
     $sql = 'INSERT INTO
-            user_comment_data(
+            comment_data(
             room_id,
             user_name,
             user_comment,
@@ -57,7 +57,7 @@ function get_room_comment($db,$room_id){
             user_comment,
             created
             FROM
-            user_comment_data
+            comment_data
             WHERE room_id = ?';
         $params[] = $room_id;
         return fetch_all_query($db,$sql,$params);
@@ -65,9 +65,18 @@ function get_room_comment($db,$room_id){
 
 function delete_comment($db,$comment_id){
     $sql = 'DELETE FROM
-            user_comment_data
+            comment_data
             WHERE
             comment_id = ?';
         $params[] = $comment_id;
+        return execute_query($db,$sql,$params);
+}
+
+function delete_room($db,$room_id){
+    $sql = 'DELETE FROM
+            user_room_data
+            WHERE
+            room_id = ?';
+        $params[] = $room_id;
         return execute_query($db,$sql,$params);
 }

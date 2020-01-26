@@ -32,7 +32,7 @@ function fetch_all_query($db,$sql,$params = array()){
         $stmt->execute($params);
         return $stmt->fetchALL();
     } catch (PDOException $e){
-        $err_message[] = 'データ取得に失敗しました。';
+        $err_message[] = 'データ取得に失敗しました。理由:' .$e;
     }
     return $err_message;
 }
