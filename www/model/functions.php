@@ -36,8 +36,21 @@ function get_post($name){
 }
 
 function is_logined(){
-    if(!isset($_SESSION['name']) === true){
+    if(!isset($_SESSION['name'])){
         header('Location: /login.php');
         exit;
     }
+}
+
+function entity_str($str){
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+
+function entity_assoc_array($assoc_array){
+    foreach($assoc_array as $key => $value){
+        foreach($value as $keys => $values){
+            $assoc_array[$key][$keys] = entity_str($values); 
+        }
+    }
+    return $assoc_array;
 }

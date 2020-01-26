@@ -4,6 +4,9 @@ require_once '../model/functions.php';
 require_once '../model/login_model.php';
 
 session_start();
+if(isset($_SESSION['name'])){
+    header('Location: main.php');
+}
 $db = get_db_conect();
 $err_msg = '';
 

@@ -39,3 +39,6 @@ td{
     height: 60px;
     font-size: 60px;
 }
+.submit_button{
+    display: inline-flex;
+}

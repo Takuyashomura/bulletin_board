@@ -33,10 +33,23 @@
          <td><?php print $room['room_id'];?></td>
          <td><?php print $room['room_name'];?></td>
          <td><?php print $room['administrator'];?></td>
-         <td><form method="POST" action="room.php">
-             <input class="submit" type="submit" value="入室">
-             <input type="hidden" name="room_id" value=<?php print $room['room_id'];?>>
-         </form></td>
+         <td>
+            <div class="submit_button">
+            <form method="POST" action="room.php">
+                <input class="submit" type="submit" value="入室">
+                <input type="hidden" name="room_id" value=<?php print $room['room_id'];?>>
+            </form>
+            </div>
+            <?php if($_SESSION['name'] === $room['administrator']){?>
+            <div class="submit_button">
+            <form method="POST">
+                <input class="submit" type="submit" value="削除">
+                <input type="hidden" name="room_id" value=<?php print $room['room_id'];?>>
+                <input type="hidden" name="type" value="delete">
+            </form>
+            </div>
+            <?php } ?>
+        </td>
      </tr>   
    <?php } ?>
     </div>

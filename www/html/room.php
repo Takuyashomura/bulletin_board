@@ -8,9 +8,11 @@ is_logined();
 
 $err_message[] = array();
 $db = get_db_conect();
+
 if(isset($_SESSION['room_id']) === false){
 $_SESSION['room_id'] = get_post('room_id');
 }
+
 $room_id = $_SESSION['room_id'];
 $room_data = get_room_data($db,$room_id);
 $nowdate = date('Y-m-d H:i:s');
@@ -38,6 +40,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header('Location: /room.php');
     }
 }
+$room_comment_data = array();
 $room_comment_data = get_room_comment($db,$room_id);
+
+$room_comment_data = entity_assoc_array($room_comment_data);
 
 include_once '../view/room_view.php';

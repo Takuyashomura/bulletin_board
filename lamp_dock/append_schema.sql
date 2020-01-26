@@ -26,7 +26,7 @@ ALTER TABLE `user_room_data`
     MODIFY room_id int(11) NOT NULL AUTO_INCREMENT;
 
 --ユーザーコメント
-CREATE TABLE `user_comment_data`(
+CREATE TABLE `comment_data`(
     `comment_id` int(11) NOT NULL,
     `room_id`int(11) NOT NULL,
     `user_name`varchar(100) NOT NULL COLLATE ,
@@ -34,8 +34,8 @@ CREATE TABLE `user_comment_data`(
     `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE `user_comment_data`
+ALTER TABLE `comment_data`
     ADD PRIMARY KEY (`comment_id`);
 
-ALTER TABLE `user_comment_data`
+ALTER TABLE `comment_data`
     MODIFY comment_id int(11) NOT NULL AUTO_INCREMENT;
