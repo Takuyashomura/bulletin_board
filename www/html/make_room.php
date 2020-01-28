@@ -14,7 +14,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $db = get_db_conect();
 
         make_room($db,$room_name,$user_name);
-            $result = 'ルームを作成しました。.';
+            $result = 'ルームを作成しました。';
+
+            header('Location: make_room.php');
     }
     }
 

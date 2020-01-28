@@ -50,7 +50,7 @@
     <?php } ?>
     <div class="comment-form">
         <form method="POST">
-            <textarea name="comment" placeholder="コメントを入力"></textarea>
+            <input type="text" name="comment" placeholder="コメントを入力してください" size="40px">
             <input type="submit" value="送信">
             <input type="hidden" name="type" value="comment">
             <input type="hidden" name="room_id" value=<?php print $room_data['room_id']; ?>>

@@ -30,8 +30,10 @@ td{
     font-size:20px
 }
 .main{
+    background-color: #ffff;
+    border-radius: 10px;
     width: 980px;
-    margin: 0 auto;
+    margin: 0 auto ;
     padding-top: 20px;
 }
 .submit{
