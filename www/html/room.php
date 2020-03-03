@@ -30,14 +30,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 $err_msg = "コメントを入力してください。";
             } else {
                 insert_comment($db,$room_id,$user_name,$user_comment,$nowdate);
-                header('Location: /room.php');
+                header('Location:room.php');
             }
         }
 
     }elseif($_POST['type'] === "delete"){
         $comment_id = get_post('delete_comment');
         delete_comment($db,$comment_id);
-        header('Location: /room.php');
+        header('Location:room.php');
     }
 }
 $room_comment_data = array();

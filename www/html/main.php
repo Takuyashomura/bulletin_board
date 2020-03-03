@@ -19,10 +19,15 @@ $room_data = entity_assoc_array($room_data);
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     if($_POST['type'] === "delete"){
     if(isset($_POST['room_id']) === true){
-        $room_id = get_post('room_id');
-        delete_room($db,$room_id);
-        
-        header('Location: main.php');
+            $room_id = get_post('room_id');
+            $is_delete = get_post('is_delete');
+
+            if($is_delete === 'yes'){
+                delete_room($db,$room_id);
+                header('Location: main.php');
+            } else {
+                header('Location: main.php');
+            }
     }
 }
 }

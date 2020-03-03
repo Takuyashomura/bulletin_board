@@ -19,7 +19,7 @@
 <body>
 <header>
     <div class="image">
-    <img src="/assets/images/logo.png">
+    <img src=<?php print logo_img?>>
     </div>
 </header>
 <h1>ルーム作成画面</h1>

@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="image">
-    <img src="/assets/images/logo.png">
+    <img src=<?php print logo_img?>>
     </div>
 </header>
 <div class="main">
@@ -27,7 +27,7 @@
         <th>ルーム名</th>
         <th>作成者</th>
     </tr>
-    <div class="contents">
+    <div class="contents-area">
     <?php foreach($room_data as $room){?>
      <tr class="contents">
          <td><?php print $room['room_id'];?></td>
@@ -42,10 +42,9 @@
             </div>
             <?php if($_SESSION['name'] === $room['administrator']){?>
             <div class="submit_button">
-            <form method="POST">
-                <input class="submit" type="submit" value="削除">
+            <form name="delete_room" method="POST" action="room_delete.php">
+                <input class="submit" name="btn" type="submit" value="削除">
                 <input type="hidden" name="room_id" value=<?php print $room['room_id'];?>>
-                <input type="hidden" name="type" value="delete">
             </form>
             </div>
             <?php } ?>

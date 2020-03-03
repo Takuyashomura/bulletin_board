@@ -11,10 +11,12 @@
 </head>
 <header>
     <div class="image">
-    <img src="/assets/images/logo.png">
+    <img src=<?php print logo_img?>>
     </div>
 </header>
 <body>
+    <div class="center">
+    <h1>新規登録</h1>
     <?php
     if(count($err_msg) !== 0){
         foreach($err_msg as $err){ ?>
@@ -25,8 +27,7 @@
         <ul>
             <li><?php echo $result; ?></li>
         </ul> 
-        <?php } ?>  
-    <div class="center">
+    <?php } ?>  
     <form method="POST">
         <div class="form">
             <div>
