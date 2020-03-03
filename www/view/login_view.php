@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="image">
-    <img src="/assets/images/logo.png">
+    <img src=<?php print logo_img?>>
     </div>
 </header>
 <main>
